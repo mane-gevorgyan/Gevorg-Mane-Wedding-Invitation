@@ -47,7 +47,7 @@ export default function StickyImage({ t }) {
 
         {/* Scrolling content */}
         <div className="relative z-20 translate-y-[40vh]">
-          <div className="flex flex-col items-center justify-center text-center text-black gap-8 px-6">
+          <div className="flex flex-col items-center justify-center text-center gap-8 px-6">
             <div className="relative">
               <h1 className="absolute bottom-120 right-7">{t.gevorg}</h1>
               <h1 className="absolute bottom-110 -right-3">{t.and}</h1>

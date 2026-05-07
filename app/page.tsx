@@ -52,8 +52,12 @@ export default function InvitationFlow() {
 
   return (
     <div
-      className={`inset-0 overflow-hidden ${step === "details" ? "relative" : "fixed"}`}
+      className={`inset-0 overflow-hidden bg-cover ${step === "details" ? "relative" : "fixed"}`}
+      style={{backgroundImage: "url('/bg.jpg')"}}
     >
+
+      <audio ref={audioRef} src="/feeling_good.MP3" loop preload="auto" />
+
       {step === "intro" && (
         <CinematicEnvelopeReveal
           setNextStep={setStep}
@@ -62,8 +66,6 @@ export default function InvitationFlow() {
           setLang={setLang}
         />
       )}
-
-      <audio ref={audioRef} src="/feeling_good.MP3" loop preload="auto" />
 
       {/* DETAILS */}
       {step === "details" && (

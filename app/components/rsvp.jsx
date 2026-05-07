@@ -33,14 +33,14 @@ export default function RSVP({ translation, language }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-6 z-20 text-black">
-            <div className="flex flex-col gap-4 w-full max-w-md">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-6 z-20">
+            <div className="flex flex-col items-center gap-4 w-full max-w-md">
 
                 <label className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} text-2xl`}>
                     {translation.attendance}
                 </label>
 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col items-start gap-2">
                     <label className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} flex items-center gap-2 cursor-pointer text-2xl`}>
                         <input
                             type="radio"
@@ -48,7 +48,7 @@ export default function RSVP({ translation, language }) {
                             value="yes"
                             checked={attendance === "yes"}
                             onChange={(e) => setAttendance(e.target.value)}
-                            className="accent-[#fdcdea]"
+                            className="accent-[#563a3a]"
                             required
                         />
                         {translation.yes}
@@ -61,7 +61,7 @@ export default function RSVP({ translation, language }) {
                             value="no"
                             checked={attendance === "no"}
                             onChange={(e) => setAttendance(e.target.value)}
-                            className="accent-[#fdcdea]"
+                            className="accent-[#563a3a]"
                             required
                         />
                         {translation.no}
@@ -73,12 +73,12 @@ export default function RSVP({ translation, language }) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    className="w-full border-b-2 border-[#fdcdea] bg-[#fffcfd] h-12 placeholder-[#d3cdcd] p-2 outline-none"
+                    className="w-full border-b-2 border-[#563a3aa1] bg-[#ffffff8f] h-12 placeholder-[#563a3a] p-2 px-4 shadow-2xl outline-none rounded-full"
                 />
 
                 <button
                     type="submit"
-                    className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} rounded-4xl py-4 px-6 bg-gradient-to-r from-[#fdcdea] via-[#ffe5eb] to-[#efe6eb] cursor-pointer text-2xl`}
+                    className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} px-6 py-3 rounded-full bg-[#ecececa6] shadow-2xl w-fit cursor-pointer text-2xl`}
                 >
                     {translation.send}
                 </button>
@@ -88,7 +88,6 @@ export default function RSVP({ translation, language }) {
                         {translation.thanks} 💕 {translation.respondSent}
                     </p>
                 )}
-
             </div>
         </form>
     );
