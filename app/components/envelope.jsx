@@ -4,21 +4,40 @@ import { useRef, useState, useEffect } from "react";
 import LanguageSwitcher from "../language/language";
 import { motion } from "framer-motion";
 
-export default function EnvelopeSequence({ setNextStep, setLang, t }) {
+export default function EnvelopeSequence({
+  setNextStep,
+  setLang,
+  t,
+  audioRef,
+}) {
   const flapRef = useRef(null);
   const letterRef = useRef(null);
   const videoRef = useRef(null);
 
   const [step, setStep] = useState(0);
 
-  const startAnimation = () => {
+  const startAnimation = async () => {
+    // unlock audio
+    const audio = audioRef?.current;
+
+    if (audio) {
+      try {
+        audio.muted = true;
+        await audio.play();
+        audio.pause();
+        audio.currentTime = 0;
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
     setStep(1);
 
     setTimeout(() => setStep(2), 700);
     setTimeout(() => setStep(3), 1400);
     setTimeout(() => setStep(4), 1600);
     setTimeout(() => setStep(5), 3000);
-    setTimeout(() => setStep(6), 3000); // 👉 NEW STEP
+    setTimeout(() => setStep(6), 3000);
     setTimeout(() => setNextStep("details"), 19000);
   };
 
