@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/language/language.jsx", "app/page.tsx", "app/components/countdown.jsx"  ],
   "exclude": ["node_modules"]
 }
