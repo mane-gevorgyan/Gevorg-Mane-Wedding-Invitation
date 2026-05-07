@@ -55,7 +55,7 @@ export default function InvitationFlow() {
       className={`inset-0 overflow-hidden ${step === "details" ? "relative" : "fixed"}`}
     >
       {step === "intro" && (
-        <CinematicEnvelopeReveal setNextStep={setStep} audioRef={audioRef} />
+        <CinematicEnvelopeReveal setNextStep={setStep} audioRef={audioRef} t={t} setLang={setLang} />
       )}
 
       {/* DETAILS */}
