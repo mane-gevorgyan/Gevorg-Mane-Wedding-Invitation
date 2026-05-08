@@ -4,6 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import LanguageSwitcher from "../language/language";
 import { motion } from "framer-motion";
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export default function EnvelopeSequence({
   setNextStep,
   setLang,
@@ -18,7 +20,6 @@ export default function EnvelopeSequence({
   const [step, setStep] = useState(0);
 
   const startAnimation = async () => {
-    // unlock audio
     const audio = audioRef?.current;
 
     if (audio) {
@@ -32,14 +33,23 @@ export default function EnvelopeSequence({
       }
     }
 
-    setStep(1);
+    setStep(1); // Open Flap
+    await delay(700);
 
-    setTimeout(() => setStep(2), 700);
-    setTimeout(() => setStep(3), 1400);
-    setTimeout(() => setStep(4), 1600);
-    setTimeout(() => setStep(5), 3000);
-    setTimeout(() => setStep(6), 3000);
-    setTimeout(() => setNextStep("details"), 19000);
+    setStep(2); // Letter slides up
+    await delay(700);
+
+    setStep(3); // Letter Z-index change
+    await delay(200);
+
+    setStep(4); // Letter slides down into front position
+    await delay(1400);
+
+    setStep(5); // Prepare video scaling
+    setStep(6); // Play Video
+
+    await delay(17500); // Wait for video duration
+    setNextStep("details");
   };
 
   // 👉 autoplay video when step 6 is reached
@@ -51,8 +61,8 @@ export default function EnvelopeSequence({
 
   return (
     <div
-      className="relative flex flex-col w-full h-screen items-center justify-center bg-[#ece5d8] bg-no-repeat overflow-hidden object-contain object-center"
-      style={{ backgroundImage: "url('/silk.jpg')" }}
+      className="relative flex flex-col w-full h-screen items-center justify-centerbg-[#ece5d8] bg-no-repeat bg-cover bg-center overflow-hidden"
+      style={{ backgroundImage: "url('/bg2.jpg')" }}
     >
       {/* Langage Switcher */}
       <motion.div
