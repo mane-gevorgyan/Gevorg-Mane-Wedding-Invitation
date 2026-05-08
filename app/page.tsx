@@ -15,7 +15,7 @@ type Step = "intro" | "details";
 export type Lang = "hy" | "ru" | "en";
 
 export default function InvitationFlow() {
-  const [step, setStep] = useState<Step>("details");
+  const [step, setStep] = useState<Step>("intro");
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const [lang, setLang] = useState<Lang>("hy");
