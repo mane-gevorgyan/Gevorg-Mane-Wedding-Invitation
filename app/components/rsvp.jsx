@@ -84,8 +84,8 @@ export default function RSVP({ translation, language }) {
                 </button>
 
                 {submitted && (
-                    <p className={`${language === 'ru' ? 'russianFont' : 'artiFont'} text-center text-pink-500`}>
-                        {translation.thanks} 💕 {translation.respondSent}
+                    <p className={`${language === 'ru' ? 'russianFont' : 'artiFont'} text-center text-[#563a3a]`}>
+                        {translation.thanks} 🩶 {translation.respondSent}
                     </p>
                 )}
             </div>

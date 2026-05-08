@@ -51,7 +51,7 @@ export default function EnvelopeSequence({
 
   return (
     <div
-      className="relative flex flex-col w-full h-screen items-center justify-center bg-[#ece5d8] overflow-hidden object-contain object-center "
+      className="relative flex flex-col w-full h-screen items-center justify-center bg-[#ece5d8] bg-no-repeat overflow-hidden object-contain object-center"
       style={{ backgroundImage: "url('/silk.jpg')" }}
     >
       {/* Langage Switcher */}

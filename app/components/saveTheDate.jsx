@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function SaveTheDate({ t }) {
   return (
-    <div className="z-10 flex flex-col items-center justify-center text-center -translate-y-[40vh] px-15">
+    <div className="z-10 flex flex-col items-center justify-center text-center -translate-y-[40vh] px-10">
       <h1 className="kotaykFont">{t.saveTheDate}</h1>
       <div className="flex items-center justify-between">
         <div className="relative w-full h-full flex flex-col items-center gap-8">
