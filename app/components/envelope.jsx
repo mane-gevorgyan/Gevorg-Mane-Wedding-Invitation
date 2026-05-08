@@ -9,6 +9,7 @@ export default function EnvelopeSequence({
   setLang,
   t,
   audioRef,
+  font,
 }) {
   const flapRef = useRef(null);
   const letterRef = useRef(null);
@@ -78,7 +79,7 @@ export default function EnvelopeSequence({
       </motion.div>
 
       <motion.h1
-        className="text-[#f1f0f0] allegroFont text-center z-50 absolute top-16 leading-15"
+        className={`text-[#f1f0f0] text-center z-50 absolute top-16 leading-15 ${font.title}`}
         animate={
           step > 0
             ? {
@@ -226,7 +227,7 @@ export default function EnvelopeSequence({
       {step === 0 && (
         <motion.button
           onClick={startAnimation}
-          className="text-[#f1f0f0] bg-[#a9a298] px-5 py-2 rounded-full shadow absolute bottom-38"
+          className={`text-[#f1f0f0] bg-[#a9a298] px-5 py-2 rounded-full shadow absolute bottom-38 ${font.body}`}
         >
           {t.open}
         </motion.button>

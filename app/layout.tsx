@@ -13,22 +13,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const allegro = localFont({
-  src: "./fonts/Allegro.otf",
-  weight: "400",
-  variable: "--font-allegro",
-});
-
 const dzeragir = localFont({
   src: "./fonts/Dzeragir.otf",
   weight: "400",
   variable: "--font-dzeragir",
 });
 
-const wien = localFont({
-  src: "./fonts/Wien.otf",
+const arti = localFont({
+  src: "./fonts/Arti.otf",
   weight: "400",
-  variable: "--font-wien",
+  variable: "--font-arti",
+});
+
+const kotayk = localFont({
+  src: "./fonts/Kotayk.otf",
+  weight: "400",
+  variable: "--font-kotayk",
+});
+
+const boska = localFont({
+  src: "./fonts/Boska.otf",
+  weight: "400",
+  variable: "--font-boska",
+});
+
+const generalSans = localFont({
+  src: "./fonts/GeneralSans.otf",
+  weight: "400",
+  variable: "--font-general-sans",
 });
 
 export const metadata: Metadata = {
@@ -44,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${allegro.variable} ${dzeragir.variable} ${wien.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${dzeragir.variable} ${boska.variable} ${arti.variable} ${kotayk.variable} ${generalSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

@@ -36,12 +36,12 @@ export default function RSVP({ translation, language }) {
         <form onSubmit={handleSubmit} className="flex flex-col items-center gap-6 z-20">
             <div className="flex flex-col items-center gap-4 w-full max-w-md">
 
-                <label className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} text-2xl`}>
+                <label className={`${language === 'ru' ? 'russianFont' : 'artiFont'} text-2xl`}>
                     {translation.attendance}
                 </label>
 
                 <div className="flex flex-col items-start gap-2">
-                    <label className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} flex items-center gap-2 cursor-pointer text-2xl`}>
+                    <label className={`${language === 'ru' ? 'russianFont' : 'artiFont'} flex items-center gap-2 cursor-pointer text-2xl`}>
                         <input
                             type="radio"
                             name="attendance"
@@ -54,7 +54,7 @@ export default function RSVP({ translation, language }) {
                         {translation.yes}
                     </label>
 
-                    <label className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} flex items-center gap-2 cursor-pointer text-2xl`}>
+                    <label className={`${language === 'ru' ? 'russianFont' : 'artiFont'} flex items-center gap-2 cursor-pointer text-2xl`}>
                         <input
                             type="radio"
                             name="attendance"
@@ -78,13 +78,13 @@ export default function RSVP({ translation, language }) {
 
                 <button
                     type="submit"
-                    className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} px-6 py-3 rounded-full bg-[#ecececa6] shadow-2xl w-fit cursor-pointer text-2xl`}
+                    className={`${language === 'ru' ? 'russianFont' : ''} px-6 py-3 rounded-full bg-[#ecececa6] shadow-2xl w-fit cursor-pointer`}
                 >
                     {translation.send}
                 </button>
 
                 {submitted && (
-                    <p className={`${language === 'ru' ? 'russianFont' : 'handwrittenFont'} text-center text-pink-500`}>
+                    <p className={`${language === 'ru' ? 'russianFont' : 'artiFont'} text-center text-pink-500`}>
                         {translation.thanks} 💕 {translation.respondSent}
                     </p>
                 )}

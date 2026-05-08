@@ -47,11 +47,12 @@ export default function StickyImage({ t }) {
 
         {/* Scrolling content */}
         <div className="relative z-20 translate-y-[40vh]">
-          <div className="flex flex-col items-center justify-center text-center gap-8 px-6">
+          <div className="flex flex-col items-center justify-center text-center gap-8 px-15">
             <div className="relative">
-              <h1 className="absolute bottom-120 right-7">{t.gevorg}</h1>
-              <h1 className="absolute bottom-110 -right-3">{t.and}</h1>
-              <h1 className="absolute bottom-100 left-7">{t.mane}</h1>
+              <h1 className="absolute bottom-120 right-7 kotaykFont">{t.gevorg}</h1>
+              <h1 className="absolute bottom-110 -right-3 kotaykFont">{t.and}</h1>
+              <h1 className="absolute bottom-100 left-7 kotaykFont">{t.mane}</h1>
+              <p className="absolute bottom-80 -left-30 kotaykFont" style={{fontSize: "46px"}}>26.06.2026</p>
             </div>
             {/* <motion.div
               animate={{ y: [0, -5, 0] }}

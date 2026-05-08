@@ -68,8 +68,8 @@ function TimeBox({
 }) {
   return (
     <div className="flex flex-col">
-      <span className="text-4xl">{value}</span>
-      <span className="text-2xl">{getPlural(value, forms, lang)}</span>
+      <span className="text-4xl artiFont">{value}</span>
+      <span className="text-2xl artiFont">{getPlural(value, forms, lang)}</span>
     </div>
   );
 }

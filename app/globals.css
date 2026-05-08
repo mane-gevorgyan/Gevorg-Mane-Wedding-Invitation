@@ -55,19 +55,27 @@ h4 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 2;
   text-align: justify;
-}
-
-.allegroFont {
-  font-family: var(--font-allegro);
 }
 
 .dzeragirFont {
   font-family: var(--font-dzeragir);
 }
 
-.wienFont {
-  font-family: var(--font-wien);
+.artiFont {
+  font-family: var(--font-arti);
+}
+
+.kotaykFont {
+  font-family: var(--font-kotayk);
+}
+
+.boskaFont {
+  font-family: var(--font-boska);
+}
+
+.generalSansFont {
+  font-family: var(--font-general-sans);
 }

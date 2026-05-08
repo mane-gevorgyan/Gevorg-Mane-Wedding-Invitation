@@ -15,11 +15,27 @@ type Step = "intro" | "details";
 export type Lang = "hy" | "ru" | "en";
 
 export default function InvitationFlow() {
-  const [step, setStep] = useState<Step>("intro");
+  const [step, setStep] = useState<Step>("details");
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const [lang, setLang] = useState<Lang>("hy");
   const t = translations[lang];
+
+  const fontsByLang = {
+    hy: {
+      title: "kotaykFont",
+      body: "ArtiFont",
+    },
+    ru: {
+      title: "boskaFont",
+      body: "GeneralSansFont",
+    },
+    en: {
+      title: "boskaFont",
+      body: "GeneralSansFont",
+    },
+  };
+  const font = fontsByLang[lang];
 
   const fadeInAudio = async () => {
     const audio = audioRef.current;
@@ -53,13 +69,13 @@ export default function InvitationFlow() {
   return (
     <div
       className={`inset-0 overflow-hidden bg-cover ${step === "details" ? "relative" : "fixed"}`}
-      style={{backgroundImage: "url('/bg.jpg')"}}
+      style={{ backgroundImage: "url('/bg.jpg')" }}
     >
-
       <audio ref={audioRef} src="/feeling_good.MP3" loop preload="auto" />
 
       {step === "intro" && (
         <CinematicEnvelopeReveal
+          font={font}
           setNextStep={setStep}
           audioRef={audioRef}
           t={t}
