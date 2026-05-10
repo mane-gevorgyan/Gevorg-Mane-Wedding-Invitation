@@ -44,8 +44,8 @@ const generalSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Gevorg & Mane | Wedding Invitation",
-  description: "Join us in celebrating the wedding of Gevorg and Mane.",
+  title: "Գևորգ և Մանե | Հարսանեկան հրավեր",
+  description: "Gevorg and Mane | Wedding Invitation",
 };
 
 export default function RootLayout({
